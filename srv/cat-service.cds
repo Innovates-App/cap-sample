@@ -10,4 +10,11 @@ service CatalogService {
 
     entity Authors      as projection on my.Authors;
     entity BookToAuthor as projection on my.BookToAuthor;
+
+    type response {
+        error   : Boolean;
+        message : String
+    }
+
+    action orderBook(bookID : Integer) returns response
 }
